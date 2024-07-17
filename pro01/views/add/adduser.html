@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>adduser</title>
+</head>
+<body>
+    <form action="{{ urlfor `AddController.Adduser` }}" method="POST">
+      <label>用户名:</label><input type="text" name="name" value="" /> <br/>
+      <label>密码:</label><input type="password" name="password" value="" /> <br/>
+      <label>邮箱:</label><input type="text" name="email" value="" /> <br/>
+      <input type="submit" value="注册"/>
+    </form>
+    {{ if .errors.HasErrors }}
+    {{ range .errors.Errors }}
+    {{ index . 0 }}
+    {{ end }}
+    <br/>
+    {{ end }}
+    <a href="{{ urlfor `AuthController.Login` }}">登录</a>
+
+
+</body>
+</html>

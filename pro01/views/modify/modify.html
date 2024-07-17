@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{{ urlfor `UserController.ModifyUsers` }}" method="POST">
+    <label>名称:</label><input type="text" name="name" value="" /> <br/>
+    <label>密码:</label><input type="password" name="password" value="" /> <br/>
+    <label>邮箱:</label><input type="text" name="email" value="" /> <br/>
+    <input type="submit" value="更改"/>
+    <a href="{{ urlfor `UserController.Query` }}">返回</a>
+</form>
+</body>
+</html>
